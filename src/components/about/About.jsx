@@ -9,11 +9,11 @@ export default function About({ innerRef }) {
     <>
       <p>
         <span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span>{' '}
-        cat about{firstName}
+        cat about {firstName}
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          about{firstName} <span className="text-[#27C93F]">(main)</span> $
+          about {firstName}<span className="text-[#27C93F]">(main)</span> $
         </span>{' '}
         {info.bio}
       </p>
@@ -23,7 +23,7 @@ export default function About({ innerRef }) {
   const skillsText = (
     <>
       <p>
-        <span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span>{' '}
+        <span style={{ color: info.baseColor }}>{firstName} {info.lastName.toLowerCase()} $</span>{' '}
         cd skills/tools
       </p>
       <p>

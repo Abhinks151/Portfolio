@@ -16,13 +16,13 @@ export const singlePage = false
 // ─── Your info ───────────────────────────────────────────────────────────────
 export const info = {
     firstName: 'Abhin',
-    lastName: 'K S',
+    lastName: 'KS',
     // initials: 'AKS', // Not used in the new Navbar.jsx
     position: 'a Full Stack Developer',
     selfPortrait: self,
     resumeUrl: '#', // Replace with a direct link to your resume PDF
     gradient: `-webkit-linear-gradient(135deg, ${colors.join(', ')})`,
-    baseColor: colors[0],
+    baseColor: '#27C93F',
 
     miniBio: [
         { emoji: '☕', text: 'fueled by coffee' },
@@ -91,10 +91,10 @@ export const info = {
     },
 
     hobbies: [
-        { label: 'reading', emoji: '📖' },
-        { label: 'theater', emoji: '🎭' },
-        { label: 'movies', emoji: '🎥' },
-        { label: 'cooking', emoji: '🌶' },
+        { label: 'exploring new tech', emoji: '🔭' },
+        { label: 'electronics', emoji: '🔌' },
+        { label: 'game development', emoji: '🎮' },
+        { label: 'creative coding', emoji: '🧩' },
     ],
 
     projects: [
