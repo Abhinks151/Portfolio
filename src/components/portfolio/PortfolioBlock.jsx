@@ -8,10 +8,10 @@ export default function PortfolioBlock({ image, live, source, title }) {
       <h2 className="text-2xl font-semibold">{title}</h2>
       <div className="flex flex-col gap-2 items-center text-lg">
         <div className="px-4 py-1 border-2 border-current rounded-full">
-          <IconLink link={live} title="Live Demo" icon="fa fa-safari" />
+          <IconLink link={live} title="Live Demo" icon="fa-solid fa-arrow-up-right-from-square" />
         </div>
         <div className="px-4 py-1 border-2 border-current rounded-full">
-          <IconLink link={source} title="Source Code" icon="fa fa-code" />
+          <IconLink link={source} title="Source Code" icon="fa-solid fa-code" />
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ and lightweight (built with React 18, Vite, and Tailwind CSS) so the owner can e
 | Routing     | react-router-dom v6           | BrowserRouter + HashLink      |
 | Package mgr | pnpm                          | Use `pnpm`, never npm/yarn    |
 | Fonts       | Inter & Monospace (Google Fonts) | Loaded in `index.html`     |
-| Icons       | Font Awesome 4.7 (CDN)        | Loaded in `index.html`        |
+| Icons       | Font Awesome 6.6.0 (CDN)      | `fa-solid`, `fa-brands` prefixes |
 
 ## Project Structure
 ```

@@ -15,9 +15,9 @@ export const singlePage = false
 
 // ─── Your info ───────────────────────────────────────────────────────────────
 export const info = {
-    firstName: 'John',
-    lastName: 'Smith',
-    initials: 'JS',
+    firstName: 'Abhin',
+    lastName: 'K S',
+    // initials: 'AKS', // Not used in the new Navbar.jsx
     position: 'a Full Stack Developer',
     selfPortrait: self,
     resumeUrl: '#', // Replace with a direct link to your resume PDF
@@ -26,24 +26,68 @@ export const info = {
 
     miniBio: [
         { emoji: '☕', text: 'fueled by coffee' },
-        { emoji: '🌎', text: 'based in the US' },
-        { emoji: '💼', text: 'Systems Engineer at Google' },
-        { emoji: '📧', text: 'johnsmith@gmail.com' },
+        { emoji: '🌎', text: 'based in the INDIA' },
+        { emoji: '💼', text: 'Intern at Brototype' },
+        { emoji: '📧', text: 'abhin1511203@gmail.com' },
     ],
 
     socials: [
-        { link: 'https://facebook.com', icon: 'fa fa-facebook', label: 'facebook' },
-        { link: 'https://instagram.com', icon: 'fa fa-instagram', label: 'instagram' },
-        { link: 'https://github.com', icon: 'fa fa-github', label: 'github' },
-        { link: 'https://linkedin.com', icon: 'fa fa-linkedin', label: 'linkedin' },
-        { link: 'https://twitter.com', icon: 'fa fa-twitter', label: 'twitter' },
+        { link: 'https://www.instagram.com/i_am_.abhin/', icon: 'fa-brands fa-instagram', label: 'instagram' },
+        { link: 'https://github.com/Abhinks151/', icon: 'fa-brands fa-github', label: 'github' },
+        { link: 'https://www.linkedin.com/in/abhin-ks/', icon: 'fa-brands fa-linkedin', label: 'linkedin' },
+        {
+            link: 'https://x.com/Iam__Abhin_ks',
+            icon: 'fa-brands fa-x-twitter',
+            label: 'X'
+        }
     ],
 
-    bio: "Hello! I'm John. I'm a systems engineer for Google. I studied CompSci at Harvard, I enjoy long walks on the beach, and I believe artificial intelligence will inevitably rule us all one day. You should hire me!",
+    bio: `Hello! I'm Abhin. I’m a software engineer focused on building scalable, 
+          high-performance web applications and solving real-world problems through
+           thoughtful engineering. I enjoy working across the stack, from crafting clean
+           interfaces to designing robust backend systems and infrastructure.`,
 
     skills: {
-        proficientWith: ['javascript', 'react', 'git', 'github', 'bootstrap', 'html5', 'css3', 'figma'],
-        exposedTo: ['nodejs', 'python', 'adobe illustrator'],
+        proficientWith: [
+            'javascript',
+            'typescript',
+            'react',
+            'redux',
+            'tailwindcss',
+            'html5',
+            'css3',
+            'nodejs',
+            'express',
+            'nestjs',
+            'mongodb',
+            'mongoose',
+            'postgresql',
+            'prisma',
+            'rest-api',
+            'git',
+            'github',
+            'docker',
+            'aws',
+            'nginx',
+            'figma'
+        ],
+
+        exposedTo: [
+            'redis',
+            'websockets',
+            'webrtc',
+            'graphql',
+            'grpc',
+            'python',
+            'c++',
+            'playwright',
+            'mocha',
+            'chai',
+            'k6',
+            'ci/cd',
+            'terraform',
+            'cloudwatch'
+        ],
     },
 
     hobbies: [

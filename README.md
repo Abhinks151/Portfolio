@@ -14,7 +14,7 @@ All personal content lives in a single file. No digging through components.
 | Styling      | [Tailwind CSS 3](https://tailwindcss.com) |
 | Routing      | [React Router v6](https://reactrouter.com) |
 | Package Mgr  | [pnpm](https://pnpm.io)     |
-| Icons        | Font Awesome 4.7 (CDN)      |
+| Icons        | Font Awesome 6.6.0 (CDN)      |
 | Fonts        | Inter — Google Fonts        |
 
 ---
