@@ -4,31 +4,33 @@ import { info } from '../../info/Info.js'
 
 export default function About({ innerRef }) {
   const firstName = info.firstName.toLowerCase()
+  const rootPrompt = `${firstName} $`
 
   const aboutMeText = (
     <>
       <p>
-        <span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span>{' '}
-        cat about {firstName}
+        <span style={{ color: info.baseColor }}>{rootPrompt}</span>{' '}
+        cd about
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          about {firstName}<span className="text-[#27C93F]">(main)</span> $
+          about<span className="text-[#27C93F]">(main)</span> $
         </span>{' '}
-        {info.bio}
+        cat bio.txt
       </p>
+      <p className="mt-1">{info.bio}</p>
     </>
   )
 
   const skillsText = (
     <>
       <p>
-        <span style={{ color: info.baseColor }}>{firstName} {info.lastName.toLowerCase()} $</span>{' '}
+        <span style={{ color: info.baseColor }}>{rootPrompt}</span>{' '}
         cd skills/tools
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          skills/tools <span className="text-[#27C93F]">(main)</span> $
+          skills/tools<span className="text-[#27C93F]">(main)</span> $
         </span>{' '}
         ls
       </p>
@@ -50,12 +52,12 @@ export default function About({ innerRef }) {
   const miscText = (
     <>
       <p>
-        <span style={{ color: info.baseColor }}>{firstName}{info.lastName.toLowerCase()} $</span>{' '}
+        <span style={{ color: info.baseColor }}>{rootPrompt}</span>{' '}
         cd hobbies/interests
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          hobbies/interests <span className="text-[#27C93F]">(main)</span> $
+          hobbies/interests<span className="text-[#27C93F]">(main)</span> $
         </span>{' '}
         ls
       </p>
