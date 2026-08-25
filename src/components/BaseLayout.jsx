@@ -12,7 +12,7 @@ export default function BaseLayout() {
   const [active, setActive] = useState(
     location.pathname === '/' ? 'home' : location.pathname.slice(1)
   )
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   const refHome = useScrollObserver(setActive)
   const refAbout = useScrollObserver(setActive)

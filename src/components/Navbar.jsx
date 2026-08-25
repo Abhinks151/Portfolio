@@ -61,7 +61,7 @@ export default function Navbar({ darkMode, handleClick, active, setActive }) {
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium border-2 border-transparent text-light transition-opacity hover:opacity-80"
-            style={{ background: info.gradient }}
+            style={{ background: 'linear-gradient(135deg, #080e0bff, #a664ff)' }}
           >
             Resume
           </a>
