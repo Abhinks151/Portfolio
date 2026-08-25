@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', Helvetica, sans-serif;
+    @apply bg-light text-dark;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a,
+  a:link,
+  a:hover,
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+}
+
+/* Dark mode overrides (applied when .dark is on <html>) */
+.dark body {
+  @apply bg-dark text-light;
+}

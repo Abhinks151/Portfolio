@@ -1,0 +1,5 @@
+/* Active nav item — gradient bottom border */
+.nav-active {
+  border-bottom: 3px solid transparent;
+  border-image-slice: 1;
+}
