@@ -16,7 +16,9 @@ export default function BaseLayout() {
 
   const refHome = useScrollObserver(setActive)
   const refAbout = useScrollObserver(setActive)
-  const refPortfolio = useScrollObserver(setActive)
+  const refProjects = useScrollObserver(setActive)
+  const refBlog = useScrollObserver(setActive)
+  const refContact = useScrollObserver(setActive)
 
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem('darkMode'))
@@ -50,7 +52,7 @@ export default function BaseLayout() {
 
       <main className="flex-1">
         {singlePage
-          ? <SinglePageRoutes refs={{ refHome, refAbout, refPortfolio }} />
+          ? <SinglePageRoutes refs={{ refHome, refAbout, refProjects, refBlog, refContact }} />
           : <MultiPageRoutes />
         }
       </main>

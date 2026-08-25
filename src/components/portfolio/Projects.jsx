@@ -2,15 +2,15 @@ import React from 'react'
 import PortfolioBlock from './PortfolioBlock.jsx'
 import { info } from '../../info/Info.js'
 
-export default function Portfolio({ innerRef }) {
+export default function Projects({ innerRef }) {
   return (
     <section
       ref={innerRef}
-      id="portfolio"
+      id="projects"
       className="py-12"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6">
-        {info.portfolio.map((project, index) => (
+        {info.projects.map((project, index) => (
           <PortfolioBlock
             key={index}
             image={project.image}

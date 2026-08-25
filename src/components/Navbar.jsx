@@ -1,15 +1,15 @@
 import React from 'react'
 import Toggler from './home/Toggler.jsx'
-import { useLocation } from 'react-router-dom'
 import { HashLink as Link } from 'react-router-hash-link'
 import { info, singlePage } from '../info/Info.js'
 import './Navbar.css'
 
 const links = [
   { name: 'Home', to: '', active: 'home' },
-  { name: 'About Me', to: 'about', active: 'about' },
-  { name: info.initials, type: 'initials', to: '', active: 'home' },
-  { name: 'Portfolio', to: 'portfolio', active: 'portfolio' },
+  { name: 'About', to: 'about', active: 'about' },
+  { name: 'Projects', to: 'projects', active: 'projects' },
+  { name: 'Blog', to: 'blog', active: 'blog' },
+  { name: 'Contact', to: 'contact', active: 'contact' },
 ]
 
 const scrollWithOffset = (el) => {
@@ -19,35 +19,56 @@ const scrollWithOffset = (el) => {
 
 export default function Navbar({ darkMode, handleClick, active, setActive }) {
   return (
-    <nav className={`w-full z-10 transition-all duration-400 ${singlePage ? 'fixed' : 'relative'} bg-light dark:bg-dark`}>
-      <ul className="flex justify-center items-center gap-8 md:gap-32 text-base lowercase px-4 py-3">
-        {links.map((link, index) => (
-          <li
-            key={index}
-            className={`transition-transform duration-250 hover:-translate-y-1 ${link.active === active && !link.type ? 'nav-active' : ''
-              }`}
-            style={link.active === active && !link.type
-              ? { borderImageSource: info.gradient }
-              : {}}
-          >
-            <Link
-              to={singlePage ? `#${link.to}` : `/${link.to}`}
-              scroll={scrollWithOffset}
-              smooth
-              onClick={() => setActive(link.active)}
-              className="text-dark dark:text-light hover:opacity-80 transition-opacity"
+    <nav className={`w-full z-10 transition-all duration-400 ${singlePage ? 'fixed' : 'relative'} bg-light dark:bg-dark border-b border-black/10 dark:border-white/10`}>
+      <div className="flex justify-between items-center px-6 py-3 max-w-7xl mx-auto">
+
+        {/* Brand */}
+        <Link
+          to={singlePage ? '#' : '/'}
+          onClick={() => setActive('home')}
+          className="text-xl font-bold tracking-wide text-dark dark:text-light hover:opacity-70 transition-opacity"
+          style={{ background: info.gradient, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+        >
+          {info.firstName}
+        </Link>
+
+        {/* Nav links */}
+        <ul className="hidden md:flex items-center gap-6 text-sm lowercase">
+          {links.map((link, index) => (
+            <li
+              key={index}
+              className={`transition-transform duration-250 hover:-translate-y-0.5 ${link.active === active ? 'nav-active' : ''
+                }`}
+              style={link.active === active ? { borderImageSource: info.gradient } : {}}
             >
-              {link.type
-                ? <h1 className="text-xl font-bold">{link.name}</h1>
-                : <p className="py-2">{link.name}</p>
-              }
-            </Link>
-          </li>
-        ))}
-        <li>
+              <Link
+                to={singlePage ? `#${link.to}` : `/${link.to}`}
+                scroll={scrollWithOffset}
+                smooth
+                onClick={() => setActive(link.active)}
+                className="text-dark dark:text-light hover:opacity-60 transition-opacity py-2 block"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Right side — Resume CTA + Toggler */}
+        <div className="flex items-center gap-4">
+          <a
+            href={info.resumeUrl || '#'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium border-2 border-transparent text-light transition-opacity hover:opacity-80"
+            style={{ background: info.gradient }}
+          >
+            Resume
+          </a>
           <Toggler darkMode={darkMode} handleClick={handleClick} />
-        </li>
-      </ul>
+        </div>
+
+      </div>
     </nav>
   )
 }

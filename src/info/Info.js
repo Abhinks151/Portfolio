@@ -20,6 +20,7 @@ export const info = {
     initials: 'JS',
     position: 'a Full Stack Developer',
     selfPortrait: self,
+    resumeUrl: '#', // Replace with a direct link to your resume PDF
     gradient: `-webkit-linear-gradient(135deg, ${colors.join(', ')})`,
     baseColor: colors[0],
 
@@ -52,7 +53,7 @@ export const info = {
         { label: 'cooking', emoji: '🌶' },
     ],
 
-    portfolio: [
+    projects: [
         { title: 'Project 1', live: 'https://paytonpierce.dev', source: 'https://github.com/paytonjewell', image: mock1 },
         { title: 'Project 2', live: 'https://paytonpierce.dev', source: 'https://github.com/paytonjewell', image: mock2 },
         { title: 'Project 3', live: 'https://paytonpierce.dev', source: 'https://github.com/paytonjewell', image: mock3 },
