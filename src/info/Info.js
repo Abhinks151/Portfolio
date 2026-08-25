@@ -1,4 +1,4 @@
-import self from '../img/self.png'
+import self from '../img/self_crop.png'
 import mock1 from '../img/mock1.png'
 import mock2 from '../img/mock2.png'
 import mock3 from '../img/mock3.png'
@@ -48,45 +48,49 @@ export const info = {
            interfaces to designing robust backend systems and infrastructure.`,
 
     skills: {
-        proficientWith: [
-            'javascript',
-            'typescript',
-            'react',
-            'redux',
-            'tailwindcss',
-            'html5',
-            'css3',
-            'nodejs',
-            'express',
-            'nestjs',
-            'mongodb',
-            'mongoose',
-            'postgresql',
-            'prisma',
-            'rest-api',
-            'git',
-            'github',
-            'docker',
-            'aws',
-            'nginx',
-            'figma'
+        frontend: [
+            'JavaScript',
+            'TypeScript',
+            'React',
+            'Redux',
+            'Tailwind CSS',
+            'ShadCn',
+            'HTML5',
+            'CSS3',
         ],
 
-        exposedTo: [
-            'redis',
-            'websockets',
-            'webrtc',
-            'graphql',
-            'grpc',
-            'python',
-            'c++',
-            'playwright',
-            'mocha',
-            'chai',
-            'k6',
-            'ci/cd',
-            'terraform',
-            'cloudwatch'
+        backend: [
+            'Node.js',
+            'Express',
+            'NestJS',
+            'REST APIs',
+            'WebSockets',
+            'WebRTC',
+        ],
+
+        databases: [
+            'MongoDB',
+            'Mongoose',
+            'PostgreSQL',
+            'Prisma',
+            'Redis',
+        ],
+
+        devops: [
+            'Docker',
+            'AWS',
+            'Nginx',
+            'PM2',
+            'CI/CD',
+            'Terraform',
+            'CloudWatch',
+        ],
+
+        tools: [
+            'Git',
+            'GitHub',
+            'Figma',
+            'Postman',
         ],
     },
 

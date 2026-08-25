@@ -1,5 +1,3 @@
-import React from 'react'
-import me from '../../img/self.png'
 import EmojiBullet from './EmojiBullet.jsx'
 import SocialIcon from './SocialIcon.jsx'
 import { info } from '../../info/Info.js'
@@ -14,7 +12,7 @@ export default function Home({ innerRef }) {
     >
       {/* Avatar */}
       <img
-        src={me}
+        src={info.selfPortrait}
         alt="Developer portrait"
         className="rounded-full p-3 shadow-lg w-[35vh] h-[35vh] md:w-[40vh] md:h-[40vh] object-cover mb-4 md:mb-0 md:mr-8"
         style={{ background: info.gradient }}

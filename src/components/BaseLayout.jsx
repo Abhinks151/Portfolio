@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 import MultiPageRoutes from './MultiPageRoutes.jsx'
 import SinglePageRoutes from './SinglePageRoutes.jsx'
 import useScrollObserver from '../hooks/useScrollObserver.js'
-import { singlePage } from '../info/Info.js'
+import { info, singlePage } from '../info/Info.js'
 
 export default function BaseLayout() {
   const location = useLocation()
@@ -59,12 +59,13 @@ export default function BaseLayout() {
 
       <footer className="flex flex-col items-center py-6 text-muted text-sm">
         <p>
-          template created with ♥ by{' '}
-          <a href="https://paytonpierce.dev" className="underline hover:opacity-80">
-            Payton Pierce
+          {/* template created with ♥ by{' '} */}
+          Portfolio by{' '}
+          <a href="https://abhinks.site" className="underline hover:opacity-80">
+            {info.firstName + ' ' + info.lastName}
           </a>
         </p>
-        <p>© 2024</p>
+        <p>© {new Date().getFullYear()}</p>
       </footer>
     </div>
   )

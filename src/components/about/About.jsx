@@ -22,6 +22,14 @@ export default function About({ innerRef }) {
     </>
   )
 
+  const skillCategories = [
+    { label: 'Frontend', key: 'frontend' },
+    { label: 'Backend', key: 'backend' },
+    { label: 'Databases', key: 'databases' },
+    { label: 'DevOps', key: 'devops' },
+    { label: 'Tools', key: 'tools' },
+  ]
+
   const skillsText = (
     <>
       <p>
@@ -34,18 +42,16 @@ export default function About({ innerRef }) {
         </span>{' '}
         ls
       </p>
-      <p style={{ color: info.baseColor }} className="mt-2">Proficient With</p>
-      <ul className="flex flex-wrap gap-2 mt-1">
-        {info.skills.proficientWith.map((s, i) => (
-          <li key={i} className="bg-white/10 px-2 py-0.5 rounded text-sm">{s}</li>
-        ))}
-      </ul>
-      <p style={{ color: info.baseColor }} className="mt-3">Exposed To</p>
-      <ul className="flex flex-wrap gap-2 mt-1">
-        {info.skills.exposedTo.map((s, i) => (
-          <li key={i} className="bg-white/10 px-2 py-0.5 rounded text-sm">{s}</li>
-        ))}
-      </ul>
+      {skillCategories.map(({ label, key }) => (
+        <div key={key}>
+          <p style={{ color: info.baseColor }} className="mt-3">{label}</p>
+          <ul className="flex flex-wrap gap-2 mt-1">
+            {info.skills[key].map((s, i) => (
+              <li key={i} className="bg-white/10 px-2 py-0.5 rounded text-sm">{s}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </>
   )
 
