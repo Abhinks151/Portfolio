@@ -27,7 +27,11 @@ and lightweight (built with React 18, Vite, and Tailwind CSS) so the owner can e
 └── src/
     ├── main.jsx            # React 18 createRoot entry
     ├── App.jsx             # BrowserRouter wrapper
-    ├── index.css           # Tailwind directives + HTML dark mode rules
+    ├── assets/
+    │   └── css/
+    │       ├── index.css   # Global styles and Tailwind directives
+    │       ├── Navbar.css  # Navbar border active state
+    │       └── Home.css    # Home page wave animation
     ├── info/
     │   └── Info.js         # ← ALL personal data/resumes/projects lives here
     ├── img/                # Static images (self.png + mock1-5.png)
@@ -36,12 +40,10 @@ and lightweight (built with React 18, Vite, and Tailwind CSS) so the owner can e
     └── components/
         ├── BaseLayout.jsx  # Layout shell, footer, and dark mode class toggling
         ├── Navbar.jsx      # Header with brand identity, nav links, and resume CTA
-        ├── Navbar.css      # Custom styles for the active link gradient borders
         ├── MultiPageRoutes.jsx   # Multi-page mode router config
         ├── SinglePageRoutes.jsx  # Single-page mode scroll configuration
         ├── home/
         │   ├── Home.jsx    # Profile section featuring a waving hand animation
-        │   ├── Home.css    # Contains custom keyframes for the waving hand animation
         │   ├── EmojiBullet.jsx
         │   ├── SocialIcon.jsx
         │   └── Toggler.jsx
@@ -122,7 +124,7 @@ export const singlePage = true
 ### Change accent colors
 In `src/info/Info.js` update the `colors` array:
 ```js
-export const colors = ['rgb(0,200,255)', 'rgb(200,100,255)']
+export const colors = ['#f97316', '#f97316']
 ```
 
 ---

@@ -57,7 +57,7 @@ function ContactContent() {
         ))}
       </ul>
 
-      <p className="mt-6 opacity-40 text-sm">
+      <p className="mt-6 text-muted text-sm">
         <span style={{ color: info.baseColor }}>{firstName} $</span>{' '}
         # I try to reply within 24–48 hours
       </p>

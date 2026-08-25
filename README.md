@@ -34,7 +34,11 @@ All personal content lives in a single file. No digging through components.
 └── src/
     ├── main.jsx                # React 18 entry (createRoot)
     ├── App.jsx                 # BrowserRouter wrapper
-    ├── index.css               # Tailwind directives + base resets
+    ├── assets/
+    │   └── css/
+    │       ├── index.css       # Global styles and Tailwind directives
+    │       ├── Navbar.css      # Navbar active state gradient border
+    │       └── Home.css        # Home page wave animation
     ├── info/
     │   └── Info.js             # ← Edit this to customize your portfolio
     ├── img/                    # Static images (self portrait + project mocks)
@@ -54,7 +58,7 @@ All personal content lives in a single file. No digging through components.
         │   ├── About.jsx
         │   └── Terminal.jsx    # Terminal-style bio/skills display
         └── portfolio/
-            ├── Portfolio.jsx
+            ├── Projects.jsx
             ├── PortfolioBlock.jsx
             └── IconLink.jsx
 ```

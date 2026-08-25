@@ -7,7 +7,7 @@ import mock5 from '../img/mock5.png'
 
 // ─── Accent gradient colors ───────────────────────────────────────────────────
 // Use https://gradientgenerator.paytonpierce.dev/ to pick a pair you like.
-export const colors = ['rgb(0,255,164)', 'rgb(166,104,255)']
+export const colors = ['#f97316', '#f97316']
 
 // ─── Layout mode ─────────────────────────────────────────────────────────────
 // Set to `true` for a single scrollable page; `false` for multi-page routing.

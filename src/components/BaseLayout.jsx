@@ -57,7 +57,7 @@ export default function BaseLayout() {
         }
       </main>
 
-      <footer className="flex flex-col items-center py-6 opacity-70 text-sm">
+      <footer className="flex flex-col items-center py-6 text-muted text-sm">
         <p>
           template created with ♥ by{' '}
           <a href="https://paytonpierce.dev" className="underline hover:opacity-80">

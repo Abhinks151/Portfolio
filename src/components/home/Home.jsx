@@ -3,7 +3,7 @@ import me from '../../img/self.png'
 import EmojiBullet from './EmojiBullet.jsx'
 import SocialIcon from './SocialIcon.jsx'
 import { info } from '../../info/Info.js'
-import './Home.css'
+import '../../assets/css/Home.css'
 
 export default function Home({ innerRef }) {
   return (
@@ -30,7 +30,7 @@ export default function Home({ innerRef }) {
           <span className="wave inline-block ml-2">🤚</span>
         </h1>
 
-        <h2 className="text-xl md:text-2xl text-center md:text-left opacity-80">
+        <h2 className="text-xl md:text-2xl text-center md:text-left text-muted">
           I'm {info.position}.
         </h2>
 

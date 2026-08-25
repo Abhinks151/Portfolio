@@ -9,12 +9,10 @@ export default {
         mono: ['Courier New', 'Courier', 'monospace'],
       },
       colors: {
-        accent: {
-          green: 'rgb(0,255,164)',
-          purple: 'rgb(166,104,255)',
-        },
-        dark: '#1f1f1f',
-        light: '#f8f8f8',
+        accent: '#f97316',
+        muted: '#a1a1aa',
+        dark: '#0d0d0d',
+        light: '#f5f5f5',
         terminal: '#27242f',
       },
       animation: {

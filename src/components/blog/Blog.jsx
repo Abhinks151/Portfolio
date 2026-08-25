@@ -37,9 +37,9 @@ function PostList() {
       <div className="mt-4 space-y-6">
         {posts.map((post, i) => (
           <div key={i} className="border-l-2 pl-4" style={{ borderColor: info.baseColor }}>
-            <p className="text-sm opacity-50 mb-1">{post.date}</p>
+            <p className="text-sm text-muted mb-1">{post.date}</p>
             <p className="font-semibold text-base">{post.title}</p>
-            <p className="text-sm opacity-70 mt-1">{post.summary}</p>
+            <p className="text-sm text-muted mt-1">{post.summary}</p>
             <div className="flex flex-wrap gap-2 mt-2">
               {post.tags.map((t, j) => (
                 <span key={j} className="text-xs bg-white/10 px-2 py-0.5 rounded-full">{t}</span>
@@ -48,7 +48,7 @@ function PostList() {
           </div>
         ))}
       </div>
-      <p className="mt-6 opacity-40 text-sm">
+      <p className="mt-6 text-muted text-sm">
         <span style={{ color: info.baseColor }}>{firstName} $</span>{' '}
         # Full posts coming soon
       </p>
