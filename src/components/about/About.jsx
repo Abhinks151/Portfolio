@@ -14,7 +14,7 @@ export default function About({ innerRef }) {
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          about<span className="text-[#27C93F]">(main)</span> $
+          {firstName}/about $
         </span>{' '}
         cat bio.txt
       </p>
@@ -38,7 +38,7 @@ export default function About({ innerRef }) {
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          skills/tools<span className="text-[#27C93F]">(main)</span> $
+          {firstName}/skills/tools $
         </span>{' '}
         ls
       </p>
@@ -63,7 +63,7 @@ export default function About({ innerRef }) {
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          hobbies/interests<span className="text-[#27C93F]">(main)</span> $
+          {firstName}/hobbies/interests $
         </span>{' '}
         ls
       </p>

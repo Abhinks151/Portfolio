@@ -18,9 +18,6 @@ function ContactContent() {
         cat contact.md
       </p>
       <p className="mt-3">
-        <span style={{ color: info.baseColor }}>
-          contact <span className="text-[#27C93F]">(main)</span> $
-        </span>{' '}
         The best way to reach me is by email or LinkedIn.
       </p>
 
