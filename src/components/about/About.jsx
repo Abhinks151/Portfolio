@@ -34,11 +34,11 @@ export default function About({ innerRef }) {
     <>
       <p>
         <span style={{ color: info.baseColor }}>{rootPrompt}</span>{' '}
-        cd skills/tools
+        cd skills
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          {firstName}/skills/tools $
+          {firstName}/skills $
         </span>{' '}
         ls
       </p>
@@ -59,11 +59,11 @@ export default function About({ innerRef }) {
     <>
       <p>
         <span style={{ color: info.baseColor }}>{rootPrompt}</span>{' '}
-        cd hobbies/interests
+        cd hobbies
       </p>
       <p>
         <span style={{ color: info.baseColor }}>
-          {firstName}/hobbies/interests $
+          {firstName}/hobbies $
         </span>{' '}
         ls
       </p>
