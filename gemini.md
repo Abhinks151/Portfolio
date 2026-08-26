@@ -53,8 +53,12 @@ and lightweight (built with React 18, Vite, and Tailwind CSS) so the owner can e
         ├── contact/
         │   └── Contact.jsx # Terminal-styled dynamic contact list
         └── portfolio/
-            ├── Projects.jsx      # Flex/Grid block of project mockups
-            ├── PortfolioBlock.jsx # Individual project mockup component with live link + code
+            ├── Projects.jsx       # Terminal card containing two grids of projects (featured & mini)
+            ├── MainProjectCard.jsx# Card for full-featured projects inside terminal
+            ├── MiniProjectCard.jsx# Compact card for explorer projects inside terminal
+            ├── ProjectModal.jsx   # Multi-tab (about/tech-stack/architecture) terminal overlay
+            ├── parseInline.js     # Tiny inline markup parser (**bold**, `code`)
+            ├── RichText.jsx       # React custom renderer for parser outputs
             └── IconLink.jsx
 ```
 
@@ -68,19 +72,19 @@ and lightweight (built with React 18, Vite, and Tailwind CSS) so the owner can e
 - **Active Navigation Styles**: The active menu item gets configured with a gradient bottom border (`.nav-active` border-image) indicating the user's current section.
 
 ### 2. Terminal-Card GUI Pattern
-- **Style Concept**: The `About`, `Blog`, and `Contact` sections adhere to a terminal command line theme.
+- **Style Concept**: The `About`, `Projects`, `Blog`, and `Contact` sections adhere to a terminal command line theme.
 - **Header**: Mimics a standard window with red/yellow/green circle buttons on a gray header bar (`bg-[#8c8c8c]`).
 - **Body**: Uses a dark monospace command window (`bg-terminal`, `text-light`, `font-mono`) displaying interactive outputs resembling terminal commands (e.g., `john smith $ cat aboutjohn`).
 - **Lists / Tags**: Sub-properties (like tech skill proficiencies or blog post tags) are represented block-style using custom transparent pills (`bg-white/10 px-2 py-0.5 rounded text-sm`).
 
-### 3. Grid-Based Project Block (Mockups)
-- **Visuals**: The `Projects` repository renders responsive grids (`grid grid-cols-1 md:grid-cols-2`).
-- **Cards**: Project card modules use blurred/translucent dark blocks (`bg-white/5` with hover transitions) highlighting live link CTAs, mockup previews, and source code links.
+### 3. Grid-Based Project Cards inside Terminal
+- **Visuals**: Featured and Mini project grids are rendered directly *inside* the terminal sections (`ls --featured` and `ls --mini`).
+- **Cards**: Project card modules use blurred/translucent dark blocks (`bg-white/5` with hover transitions) highlighting simple taglines. Clicking "View More" triggers the multi-tab terminal details modal overlay.
 
 ### 4. Typography & Animations
-- **Base Typography**: Clean Swiss sans-serif typography (`font-sans` with Google Inter).
-- **Monospace Elements**: Custom code blocks / terminals use `font-mono` (`Courier New` or system monospaced stacks).
-- **Interactive Micro-Animations**: Hover options apply gentle transitions (e.g. `hover:-translate-y-1` or `hover:opacity-70`). The waving hand icon `🤚` uses rotation keyframes in `Home.css` to continuously wave.
+- **Base Typography**: Clean Sans-serif typography (`font-sans` with Google Inter). Sans font is preferred for buttons and body copy to ensure high readability.
+- **Monospace Elements**: Custom code blocks / terminals use `font-mono` (`Courier New` or system monospaced stacks) with standard size and height to match profile sections.
+- **Interactive Micro-Animations**: Hover options apply gentle transitions (e.g. `hover:-translate-y-1` or `hover:opacity-70`). The waving hand icon `🤚` uses rotation keyframes in `Home.css` to continuously wave. The red dot close button in the modal shows a clean `×` symbol on hover.
 
 ### 5. Dark Mode
 - Driven strictly by standard Tailwind `dark:` utility styles.
@@ -108,9 +112,17 @@ pnpm dev
 ```
 
 ### Add a new project
-Edit `src/info/Info.js` → add to the `projects` array:
+Edit `src/info/Info.js` → add to either `projects.main` or `projects.mini`:
 ```js
-{ title: 'My Project', live: 'https://...', source: 'https://github.com/...', image: mockX }
+{
+    title: 'My Project',
+    tagline: 'One-line description.',
+    image: mockX,
+    links: [{ label: 'Live Demo', url: 'https://...' }],
+    description: `Detailed description with **bold** or \`code\`.`,
+    techStack: { frontend: ['React'], backend: [], others: [] },
+    architecture: `Architecture details.`
+}
 ```
 
 ### Switch to single-page mode
