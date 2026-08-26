@@ -56,8 +56,12 @@ All personal content lives in a single file. No digging through components.
         │   ├── About.jsx
         │   └── Terminal.jsx    # Terminal-style bio/skills display
         └── portfolio/
-            ├── Projects.jsx
-            ├── PortfolioBlock.jsx
+            ├── Projects.jsx        # Terminal card containing two grids of projects
+            ├── MainProjectCard.jsx # Large card for featured project works
+            ├── MiniProjectCard.jsx # Compact card for explorer/learning works
+            ├── ProjectModal.jsx    # Sticky-image multi-tab modal window
+            ├── parseInline.js      # Custom inline bold/code compiler
+            ├── RichText.jsx        # Rich text rendering wrapper
             └── IconLink.jsx
 ```
 
@@ -71,7 +75,7 @@ All personal content lives in a single file. No digging through components.
 - `singlePage` — `true` for a scrollable single page, `false` for multi-page routing
 - `info` — your name, bio, position, socials, skills, hobbies, and portfolio projects
 
-To add a project, append to the `portfolio` array and drop the image in `src/assets/img/`.
+To add a project, append to either `projects.main` or `projects.mini` dynamically, and store the image in `src/assets/img/`.
 
 ---
 

@@ -19,13 +19,13 @@ export default function MiniProjectCard({ project, onViewMore }) {
       {/* Card body */}
       <div className="flex flex-col gap-2 p-3">
         <h4 className="text-base font-semibold truncate">{project.title}</h4>
-        <p className="text-xs text-muted font-mono leading-relaxed line-clamp-2">
+        <p className="text-sm text-muted font-mono leading-relaxed line-clamp-2">
           {project.tagline}
         </p>
 
         <button
           onClick={() => onViewMore(project)}
-          className="mt-1 self-start inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-accent text-accent text-xs font-mono hover:bg-accent hover:text-dark transition-colors duration-200 group"
+          className="mt-1 self-start inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border-2 border-accent text-accent text-xs font-sans font-bold hover:bg-accent hover:text-dark transition-all duration-200 group shadow-sm"
         >
           View More
           <i className="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-0.5 transition-transform duration-200" />

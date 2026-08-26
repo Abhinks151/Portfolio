@@ -19,13 +19,13 @@ export default function MainProjectCard({ project, onViewMore }) {
       {/* Card body */}
       <div className="flex flex-col gap-3 p-5">
         <h3 className="text-xl font-semibold">{project.title}</h3>
-        <p className="text-sm text-muted font-mono leading-relaxed line-clamp-2">
+        <p className="text-base text-muted font-mono leading-relaxed line-clamp-2">
           {project.tagline}
         </p>
 
         <button
           onClick={() => onViewMore(project)}
-          className="mt-2 self-start inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent text-accent text-sm font-mono hover:bg-accent hover:text-dark transition-colors duration-200 group"
+          className="mt-2 self-start inline-flex items-center gap-2 px-6 py-2 rounded-full border-2 border-accent text-accent text-sm font-sans font-bold hover:bg-accent hover:text-dark transition-all duration-200 group shadow-sm"
         >
           View More
           <i className="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform duration-200" />

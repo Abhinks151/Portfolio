@@ -7,7 +7,7 @@ const TABS = ['about', 'tech-stack', 'architecture']
 // ─── Tech badge pill ─────────────────────────────────────────────────────────
 function Badge({ label }) {
   return (
-    <span className="bg-white/10 px-2.5 py-0.5 rounded text-sm font-mono">
+    <span className="bg-white/10 px-3 py-1 rounded text-base font-mono">
       {label}
     </span>
   )
@@ -17,28 +17,28 @@ function Badge({ label }) {
 function AboutTab({ project }) {
   const firstName = info.firstName.toLowerCase()
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       {/* Terminal prompt */}
-      <p className="font-mono text-sm">
+      <p className="font-mono text-base md:text-lg">
         <span style={{ color: info.baseColor }}>{firstName} $</span>{' '}
         cat project/about.md
       </p>
 
       {/* Title */}
-      <h2 className="text-2xl font-semibold">{project.title}</h2>
+      <h2 className="text-3xl font-semibold">{project.title}</h2>
 
       {/* Link buttons */}
       {project.links && project.links.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-3">
           {project.links.map((link, i) => (
             <a
               key={i}
               href={link.url}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-accent text-accent text-sm font-mono hover:bg-accent hover:text-dark transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-accent text-dark border-2 border-accent text-base font-sans font-bold hover:bg-transparent hover:text-accent transition-all duration-200 shadow-md active:scale-95"
             >
-              <i className="fa-solid fa-arrow-up-right-from-square text-xs" />
+              <i className="fa-solid fa-arrow-up-right-from-square text-sm" />
               {link.label}
             </a>
           ))}
@@ -46,7 +46,7 @@ function AboutTab({ project }) {
       )}
 
       {/* Description */}
-      <RichText text={project.description} className="text-sm leading-relaxed" />
+      <RichText text={project.description} className="text-base md:text-lg leading-relaxed text-light/95" />
     </div>
   )
 }
@@ -62,18 +62,18 @@ function TechStackTab({ project }) {
   ]
 
   return (
-    <div className="space-y-5">
-      <p className="font-mono text-sm">
+    <div className="space-y-6">
+      <p className="font-mono text-base md:text-lg">
         <span style={{ color: info.baseColor }}>{firstName} $</span>{' '}
         cat project/tech-stack.md
       </p>
       {sections.map(({ label, items }) =>
         items.length > 0 ? (
-          <div key={label}>
-            <p style={{ color: info.baseColor }} className="text-sm mb-2">
+          <div key={label} className="space-y-2.5">
+            <p style={{ color: info.baseColor }} className="text-base md:text-lg font-bold">
               {label}
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2.5">
               {items.map(item => (
                 <Badge key={item} label={item} />
               ))}
@@ -89,12 +89,12 @@ function TechStackTab({ project }) {
 function ArchitectureTab({ project }) {
   const firstName = info.firstName.toLowerCase()
   return (
-    <div className="space-y-5">
-      <p className="font-mono text-sm">
+    <div className="space-y-6">
+      <p className="font-mono text-base md:text-lg">
         <span style={{ color: info.baseColor }}>{firstName} $</span>{' '}
         cat project/architecture.md
       </p>
-      <RichText text={project.architecture} className="text-sm leading-relaxed" />
+      <RichText text={project.architecture} className="text-base md:text-lg leading-relaxed text-light/95" />
     </div>
   )
 }
@@ -137,24 +137,28 @@ export default function ProjectModal({ project, onClose }) {
   return (
     /* Backdrop */
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4"
       onClick={onClose}
     >
-      {/* Modal window — stop propagation so inner clicks don't close */}
+      {/* Modal window — static height structure (prevents vertical jumping when switching tabs) */}
       <div
-        className="w-full max-w-4xl max-h-[90vh] flex flex-col rounded-lg shadow-2xl overflow-hidden"
+        className="w-full max-w-4xl h-[85vh] md:h-[650px] flex flex-col rounded-lg shadow-2xl overflow-hidden"
         style={{ background: '#27242f' }}
         onClick={e => e.stopPropagation()}
       >
         {/* ── Terminal chrome bar ── */}
-        <div className="bg-[#8c8c8c] px-3 py-2 flex items-center gap-2 shrink-0">
-          {/* Red dot closes the modal — macOS style */}
+        <div className="bg-[#8c8c8c] px-4 py-2.5 flex items-center gap-2 shrink-0">
+          {/* Red dot closes the modal with hover 'x' symbol */}
           <button
             onClick={onClose}
             aria-label="Close modal"
             title="Close"
-            className="w-3 h-3 rounded-full bg-[#FF6057] hover:brightness-110 transition cursor-pointer focus:outline-none"
-          />
+            className="group relative w-3 h-3 rounded-full bg-[#FF6057] hover:brightness-110 flex items-center justify-center cursor-pointer focus:outline-none"
+          >
+            <span className="opacity-0 group-hover:opacity-100 text-[9px] text-black font-bold absolute select-none leading-none -mt-[1px]">
+              ×
+            </span>
+          </button>
           <div className="w-3 h-3 rounded-full bg-[#FFBD2E]" />
           <div className="w-3 h-3 rounded-full bg-[#27C93F]" />
           <span className="ml-3 text-xs text-black/60 font-mono select-none">
@@ -166,30 +170,30 @@ export default function ProjectModal({ project, onClose }) {
         <div className="flex flex-col md:flex-row flex-1 overflow-hidden text-light font-mono">
 
           {/* Left: sticky hero image */}
-          <div className="md:w-2/5 shrink-0 p-4 flex flex-col gap-4 md:overflow-y-auto">
+          <div className="md:w-2/5 shrink-0 p-5 flex flex-col gap-4 md:overflow-y-auto border-r border-white/5">
             <img
               src={project.image}
               alt={`${project.title} preview`}
-              className="rounded-lg w-full object-cover aspect-video md:sticky md:top-0"
+              className="rounded-lg w-full object-cover aspect-video md:sticky md:top-0 shadow-md"
             />
             {/* Tagline under image on desktop */}
-            <p className="text-xs text-muted hidden md:block leading-relaxed">
+            <p className="text-sm text-muted hidden md:block leading-relaxed">
               {project.tagline}
             </p>
           </div>
 
           {/* Right: tab nav + content */}
-          <div className="flex-1 flex flex-col overflow-hidden border-l border-white/10">
+          <div className="flex-1 flex flex-col overflow-hidden">
             {/* Tab nav */}
-            <div className="flex shrink-0 border-b border-white/10">
+            <div className="flex shrink-0 border-b border-white/10 bg-black/15">
               {TABS.map(tab => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={[
-                    'px-4 py-2.5 text-xs font-mono transition-colors duration-150 focus:outline-none',
+                    'px-6 py-3.5 text-sm font-mono transition-colors duration-150 focus:outline-none relative',
                     activeTab === tab
-                      ? 'text-accent border-b-2 border-accent -mb-px'
+                      ? 'text-accent font-bold border-b-2 border-accent'
                       : 'text-muted hover:text-light',
                   ].join(' ')}
                 >
@@ -199,7 +203,7 @@ export default function ProjectModal({ project, onClose }) {
             </div>
 
             {/* Scrollable tab content */}
-            <div className="flex-1 overflow-y-auto p-6">
+            <div className="flex-1 overflow-y-auto p-6 md:p-8">
               {renderTab()}
             </div>
           </div>
