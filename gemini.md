@@ -28,13 +28,11 @@ and lightweight (built with React 18, Vite, and Tailwind CSS) so the owner can e
     ├── main.jsx            # React 18 createRoot entry
     ├── App.jsx             # BrowserRouter wrapper
     ├── assets/
-    │   └── css/
-    │       ├── index.css   # Global styles and Tailwind directives
-    │       ├── Navbar.css  # Navbar border active state
-    │       └── Home.css    # Home page wave animation
-    ├── info/
-    │   └── Info.js         # ← ALL personal data/resumes/projects lives here
-    ├── img/                # Static images (self.png + mock1-5.png)
+    │   ├── css/
+    │   │   ├── index.css   # Global styles and Tailwind directives
+    │   │   ├── Navbar.css  # Navbar border active state
+    │   │   └── Home.css    # Home page wave animation
+    │   └── img/            # Static images (self_crop.png + mock1-5.png)
     ├── hooks/
     │   └── useScrollObserver.js   # Intersection Observer hook for single-page Mode
     └── components/

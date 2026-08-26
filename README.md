@@ -35,13 +35,11 @@ All personal content lives in a single file. No digging through components.
     ├── main.jsx                # React 18 entry (createRoot)
     ├── App.jsx                 # BrowserRouter wrapper
     ├── assets/
-    │   └── css/
-    │       ├── index.css       # Global styles and Tailwind directives
-    │       ├── Navbar.css      # Navbar active state gradient border
-    │       └── Home.css        # Home page wave animation
-    ├── info/
-    │   └── Info.js             # ← Edit this to customize your portfolio
-    ├── img/                    # Static images (self portrait + project mocks)
+    │   ├── css/
+    │   │   ├── index.css       # Global styles and Tailwind directives
+    │   │   ├── Navbar.css      # Navbar active state gradient border
+    │   │   └── Home.css        # Home page wave animation
+    │   └── img/                # Static images (self portrait + project mocks)
     ├── hooks/
     │   └── useScrollObserver.js
     └── components/
@@ -73,7 +71,7 @@ All personal content lives in a single file. No digging through components.
 - `singlePage` — `true` for a scrollable single page, `false` for multi-page routing
 - `info` — your name, bio, position, socials, skills, hobbies, and portfolio projects
 
-To add a project, append to the `portfolio` array and drop the image in `src/img/`.
+To add a project, append to the `portfolio` array and drop the image in `src/assets/img/`.
 
 ---
 

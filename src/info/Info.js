@@ -4,6 +4,7 @@ import mock2 from '../assets/img/mock2.png'
 import mock3 from '../assets/img/mock3.png'
 import mock4 from '../assets/img/mock4.png'
 import mock5 from '../assets/img/mock5.png'
+import resume from '../assets/pdfs/resume.pdf'
 
 // ─── Accent gradient colors ───────────────────────────────────────────────────
 // Use https://gradientgenerator.paytonpierce.dev/ to pick a pair you like.
@@ -20,7 +21,7 @@ export const info = {
     // initials: 'AKS', // Not used in the new Navbar.jsx
     position: 'a Full Stack Developer',
     selfPortrait: self,
-    resumeUrl: '#', // Replace with a direct link to your resume PDF
+    resumeUrl: resume,
     gradient: `-webkit-linear-gradient(135deg, ${colors.join(', ')})`,
     baseColor: '#27C93F',
 
