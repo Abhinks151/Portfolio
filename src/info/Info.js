@@ -102,11 +102,138 @@ export const info = {
         { label: 'creative coding', emoji: '🧩' },
     ],
 
-    projects: [
-        { title: 'Project 1', live: 'https://paytonpierce.dev', source: 'https://github.com/paytonjewell', image: mock1 },
-        { title: 'Project 2', live: 'https://paytonpierce.dev', source: 'https://github.com/paytonjewell', image: mock2 },
-        { title: 'Project 3', live: 'https://paytonpierce.dev', source: 'https://github.com/paytonjewell', image: mock3 },
-        { title: 'Project 4', live: 'https://paytonpierce.dev', source: 'https://github.com/paytonjewell', image: mock4 },
-        { title: 'Project 5', live: 'https://paytonpierce.dev', source: 'https://github.com/paytonjewell', image: mock5 },
-    ],
+    // ─── Projects ─────────────────────────────────────────────────────────────
+    // Inline markup supported in `description` and `architecture`:
+    //   **bold text**   → accent-coloured bold
+    //   `code snippet`  → monospace pill
+    // Blank lines in template strings become paragraph breaks.
+    projects: {
+
+        // Full-stack projects you spent months building
+        main: [
+            {
+                title: 'Veltrex',
+                tagline: 'Multi-tenant SaaS workforce management platform.',
+                image: mock1,
+                links: [
+                    { label: 'Live Demo', url: 'https://abhinks.site' },
+                    { label: 'Source Code', url: 'https://github.com/Abhinks151/veltrex-frontend' },
+                ],
+                description: `
+                    Veltrex is a **full-stack SaaS platform** built for managing workforce operations
+                    across multiple organisations. It features **role-based access control**,
+                    real-time updates via \`WebSockets\`, and a clean admin dashboard.
+
+                    The project was developed over **4+ months** and is currently running in production,
+                    handling multi-tenant isolation at the application layer backed by **PostgreSQL**.
+                `,
+                techStack: {
+                    frontend: ['React', 'Redux', 'Tailwind CSS', 'ShadCn', 'TypeScript'],
+                    backend: ['NestJS', 'WebSockets', 'Prisma', 'JWT', 'REST APIs'],
+                    others: ['Docker', 'AWS EC2', 'Nginx', 'PM2', 'PostgreSQL', 'Redis'],
+                },
+                architecture: `
+                    The system uses a **multi-tenant architecture** where tenants are isolated at the
+                    application layer. Each request flows through a \`TenantInterceptor\` that resolves
+                    the tenant context before any handler executes.
+
+                    The **NestJS** backend follows Clean Architecture — use cases in the application
+                    layer, repositories in the infrastructure layer, and controllers as thin adapters.
+                    A **Redis** cache sits in front of frequently-read reference data to reduce DB load.
+
+                    The frontend is a **React SPA** served via \`Nginx\`, communicating with the backend
+                    over REST and \`WebSockets\` for live shift-status updates.
+                `,
+            },
+            {
+                title: 'Project 2',
+                tagline: 'Short one-line description of your second main project.',
+                image: mock2,
+                links: [
+                    { label: 'Live Demo', url: 'https://example.com' },
+                    { label: 'Source Code', url: 'https://github.com/Abhinks151' },
+                ],
+                description: `
+                    Replace this with a real description. Use **bold** for key ideas and \`code\`
+                    for technology names or commands.
+                `,
+                techStack: {
+                    frontend: ['React', 'TypeScript'],
+                    backend: ['Node.js', 'Express'],
+                    others: ['MongoDB', 'Docker'],
+                },
+                architecture: `
+                    Describe the high-level system design here. Explain how the pieces connect
+                    and any interesting **architectural decisions** you made.
+                `,
+            },
+        ],
+
+        // Learning / exploration projects
+        mini: [
+            {
+                title: 'SSE Demo',
+                tagline: 'Exploring Server-Sent Events with Node.js.',
+                image: mock3,
+                links: [
+                    { label: 'Source Code', url: 'https://github.com/Abhinks151' },
+                ],
+                description: `
+                    A minimal project built to learn **Server-Sent Events** and how they compare
+                    to \`WebSockets\` for one-way real-time data streaming.
+                `,
+                techStack: {
+                    frontend: ['HTML', 'Vanilla JS'],
+                    backend: ['Node.js', 'Express'],
+                    others: [],
+                },
+                architecture: `
+                    Single **Express** server that opens an SSE stream per client. The client
+                    subscribes with \`EventSource\` and receives live updates without polling.
+                `,
+            },
+            {
+                title: 'Redis Cache',
+                tagline: 'Hands-on Redis caching patterns with Node.js.',
+                image: mock4,
+                links: [
+                    { label: 'Source Code', url: 'https://github.com/Abhinks151' },
+                ],
+                description: `
+                    Built to understand **Redis** caching strategies — cache-aside, write-through,
+                    and TTL-based invalidation — in a real \`Node.js\` context.
+                `,
+                techStack: {
+                    frontend: [],
+                    backend: ['Node.js', 'Express'],
+                    others: ['Redis', 'Docker'],
+                },
+                architecture: `
+                    REST API backed by **MongoDB** with a **Redis** cache-aside layer.
+                    Cache hits return in <1 ms; misses populate the cache for subsequent reads.
+                `,
+            },
+            {
+                title: 'Socket Chat',
+                tagline: 'Real-time chat room with Socket.io.',
+                image: mock5,
+                links: [
+                    { label: 'Source Code', url: 'https://github.com/Abhinks151' },
+                ],
+                description: `
+                    A small chat application built to learn **Socket.io** room management,
+                    broadcast events, and handling disconnects gracefully.
+                `,
+                techStack: {
+                    frontend: ['React'],
+                    backend: ['Node.js', 'Socket.io'],
+                    others: [],
+                },
+                architecture: `
+                    Event-driven server using **Socket.io** namespaces and rooms. Each chat room
+                    is a Socket.io room; join/leave events are broadcast to all room members.
+                `,
+            },
+        ],
+    },
 }
