@@ -102,6 +102,29 @@ export const info = {
         { label: 'creative coding', emoji: '🧩' },
     ],
 
+    education: [
+        {
+            degree: 'Professional Training – Full Stack Development (MERN Stack)',
+            institution: 'Brototype',
+            term: 'Jan 2025 – Apr 2026',
+            details: [
+                'Completed intensive full-stack development training with hands-on experience building and deploying web applications',
+                'Developed full-stack applications using modern frontend and backend technologies with a focus on scalable and maintainable code',
+                'Built applications involving authentication, role-based access, payment integration, real-time communication, and third-party APIs',
+                'Practiced software design principles, data structures, algorithms, database management, and backend architecture',
+                'Gained practical experience with Git, cloud deployment, debugging, and collaborative software development'
+            ]
+        },
+        {
+            degree: 'Higher Secondary Education',
+            institution: 'ST Johns HSS undancode',
+            term: '2021 – 2023',
+            details: [
+                'Stream: Computer Science'
+            ]
+        }
+    ],
+
     // ─── Projects ─────────────────────────────────────────────────────────────
     // Inline markup supported in `description` and `architecture`:
     //   **bold text**   → accent-coloured bold
