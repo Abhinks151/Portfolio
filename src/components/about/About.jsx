@@ -22,6 +22,39 @@ export default function About({ innerRef }) {
     </>
   )
 
+  const educationText = (
+    <>
+      <p>
+        <span style={{ color: info.baseColor }}>{rootPrompt}</span>{' '}
+        cd education
+      </p>
+      <p>
+        <span style={{ color: info.baseColor }}>
+          {firstName}/education $
+        </span>{' '}
+        cat education.txt
+      </p>
+      <div className="mt-4 space-y-6">
+        {info.education?.map((edu, idx) => (
+          <div key={idx} className="py-1">
+            <p style={{ color: info.baseColor }} className="mt-2">{edu.degree}</p>
+            <p className="text-muted text-sm mt-1">
+              <span className="text-light font-medium">{edu.institution}</span> &bull; {edu.term}
+            </p>
+            <ul className="mt-3 space-y-2 text-base text-light/90">
+              {edu.details.map((detail, idx2) => (
+                <li key={idx2} className="flex items-start gap-2">
+                  <span style={{ color: info.baseColor }} className="mt-1.5 text-xs">&#9656;</span>
+                  <span className="leading-relaxed">{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </>
+  )
+
   const skillCategories = [
     { label: 'Frontend', key: 'frontend' },
     { label: 'Backend', key: 'backend' },
@@ -82,6 +115,7 @@ export default function About({ innerRef }) {
       className="flex flex-col items-center mt-12 pb-12"
     >
       <Terminal text={aboutMeText} />
+      <Terminal text={educationText} />
       <Terminal text={skillsText} />
       <Terminal text={miscText} />
     </section>
