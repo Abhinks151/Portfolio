@@ -76,6 +76,7 @@ and lightweight (built with React 18, Vite, and Tailwind CSS) so the owner can e
 - **Header**: Mimics a standard window with red/yellow/green circle buttons on a gray header bar (`bg-[#8c8c8c]`).
 - **Body**: Uses a dark monospace command window (`bg-terminal`, `text-light`, `font-mono`) displaying interactive outputs resembling terminal commands (e.g., `john smith $ cat aboutjohn`).
 - **Lists / Tags**: Sub-properties (like tech skill proficiencies or blog post tags) are represented block-style using custom transparent pills (`bg-white/10 px-2 py-0.5 rounded text-sm`).
+- **Terminal Width Constraint**: All terminal cards (About, Projects, Blog, Contact) must share the identical layout and sizing constraints. They should utilize the unified `<Terminal>` component with width styling (`w-11/12 max-w-5xl`) and `overflow-hidden` to guarantee consistent horizontal alignment during page scroll.
 
 ### 3. Grid-Based Project Cards inside Terminal
 - **Visuals**: Featured and Mini project grids are rendered directly *inside* the terminal sections (`ls --featured` and `ls --mini`).
@@ -145,3 +146,4 @@ export const colors = ['#f97316', '#f97316']
 - Do not use `npm` or `yarn` — use `pnpm` exclusively.
 - Do not add `@mui/material`, `@emotion/*`, or `sass` back.
 - Do not put personal/content data inside component files.
+- Do not duplicate terminal chrome markup (the gray title bar + dark body) in any page component — always use the shared `<Terminal>` component from `components/about/Terminal.jsx`. This ensures every terminal card across About, Projects, Blog, and Contact has the same width (`w-11/12 max-w-5xl`), padding, font size, and overflow behaviour.
