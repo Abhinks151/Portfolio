@@ -19,8 +19,12 @@ export default function Projects({ innerRef }) {
       {/* ── Main projects terminal ── */}
       {mainProjects.length > 0 && (
         <Terminal>
-          <p className="mb-6">
+          <p>
             <span style={{ color: info.baseColor }}>{firstName} $</span>{' '}
+            cd projects
+          </p>
+          <p className="mb-6">
+            <span style={{ color: info.baseColor }}>{firstName}/projects $</span>{' '}
             ls --featured
           </p>
           {/* The cards nested inside the terminal */}
@@ -39,8 +43,12 @@ export default function Projects({ innerRef }) {
       {/* ── Mini projects terminal ── */}
       {miniProjects.length > 0 && (
         <Terminal>
-          <p className="mb-6">
+          <p>
             <span style={{ color: info.baseColor }}>{firstName} $</span>{' '}
+            cd projects
+          </p>
+          <p className="mb-6">
+            <span style={{ color: info.baseColor }}>{firstName}/projects $</span>{' '}
             ls --mini
           </p>
           {/* The mini cards nested inside the terminal */}
