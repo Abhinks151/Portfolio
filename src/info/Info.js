@@ -1,9 +1,9 @@
 import self from '../assets/img/self_crop.png'
-import mock1 from '../assets/img/mock1.png'
-import mock2 from '../assets/img/mock2.png'
-import mock3 from '../assets/img/mock3.png'
-import mock4 from '../assets/img/mock4.png'
-import mock5 from '../assets/img/mock5.png'
+import veltrex from '../assets/img/veltrex.png'
+import chronova from '../assets/img/chronova.png'
+import taskvault from '../assets/img/taskvault.png'
+import devscribe from '../assets/img/devscribe.png'
+import pcforge from '../assets/img/pcforge.png'
 import resume from '../assets/pdfs/resume.pdf'
 
 // ─── Accent gradient colors ───────────────────────────────────────────────────
@@ -136,126 +136,177 @@ export const info = {
         main: [
             {
                 title: 'Veltrex',
-                tagline: 'Multi-tenant SaaS workforce management platform.',
-                image: mock1,
+                tagline: 'Multi-tenant SaaS CNC production management platform.',
+                image: veltrex,
                 links: [
-                    { label: 'Live Demo', url: 'https://abhinks.site' },
-                    { label: 'Source Code', url: 'https://github.com/Abhinks151/veltrex-frontend' },
+                    { label: 'GitHub - Backend', url: 'https://github.com/Abhinks151/veltrex_backend' },
+                    { label: 'GitHub - Frontend', url: 'https://github.com/Abhinks151/veltrex_frontend' },
+                    // { label: 'Live Demo', url: 'https://abhinks.site' },
                 ],
                 description: `
-                    Veltrex is a **full-stack SaaS platform** built for managing workforce operations
-                    across multiple organisations. It features **role-based access control**,
-                    real-time updates via \`WebSockets\`, and a clean admin dashboard.
+                Veltrex is a **multi-tenant SaaS platform** built for small and mid-sized
+                CNC manufacturing shops to manage production planning, CNC programs,
+                machine operations, maintenance, employees, and production workflows.
 
-                    The project was developed over **4+ months** and is currently running in production,
-                    handling multi-tenant isolation at the application layer backed by **PostgreSQL**.
-                `,
+                The project was developed over **4+ months** and is currently features **13+ modules**
+                inclusing custom gcode viewer and editor, production planning, machine operations, 
+                maintenance, employees, and production workflows.
+            `,
                 techStack: {
-                    frontend: ['React', 'Redux', 'Tailwind CSS', 'ShadCn', 'TypeScript'],
-                    backend: ['NestJS', 'WebSockets', 'Prisma', 'JWT', 'REST APIs'],
-                    others: ['Docker', 'AWS EC2', 'Nginx', 'PM2', 'PostgreSQL', 'Redis'],
+                    frontend: ['React', 'TypeScript', 'TailwindCSS'],
+                    backend: ['NestJS', 'Node.js', 'TypeScript', 'Prisma', 'SSE'],
+                    others: ['PostgreSQL', 'Redis', 'Razorpay', 'Docker', 'AWS EC2', 'Nginx'],
                 },
                 architecture: `
-                    The system uses a **multi-tenant architecture** where tenants are isolated at the
-                    application layer. Each request flows through a \`TenantInterceptor\` that resolves
-                    the tenant context before any handler executes.
+                The backend is designed as a **modular monolith** following **Clean Architecture**,
+                Repository Pattern, dependency injection, and domain-driven design principles.
 
-                    The **NestJS** backend follows Clean Architecture — use cases in the application
-                    layer, repositories in the infrastructure layer, and controllers as thin adapters.
-                    A **Redis** cache sits in front of frequently-read reference data to reduce DB load.
+                Implemented **multi-tenancy** and **role-based access control** for admins,
+                supervisors, machinists, and maintenance technicians.
 
-                    The frontend is a **React SPA** served via \`Nginx\`, communicating with the backend
-                    over REST and \`WebSockets\` for live shift-status updates.
-                `,
+                The production planning engine assigns jobs based on **machine compatibility,
+                job priority, deadlines, setup times, and machinist availability**.
+
+                Built **NC program management** with version control and a program editor,
+                along with production shift management using scheduled shift generation
+                and job allocation through **NestJS Schedule and cron jobs**.
+
+                Integrated **Razorpay** for lifetime purchases with webhook-based payment
+                verification. Redis is used for caching frequently accessed reference data.
+            `,
             },
+
             {
-                title: 'Project 2',
-                tagline: 'Short one-line description of your second main project.',
-                image: mock2,
+                title: 'Chronova',
+                tagline: 'Full-stack e-commerce platform for selling watches.',
+                image: chronova,
                 links: [
-                    { label: 'Live Demo', url: 'https://example.com' },
-                    { label: 'Source Code', url: 'https://github.com/Abhinks151' },
+                    { label: 'GitHub', url: 'https://github.com/Abhinks151/Chronova' },
                 ],
                 description: `
-                    Replace this with a real description. Use **bold** for key ideas and \`code\`
-                    for technology names or commands.
-                `,
+                Chronova is a **full-stack e-commerce platform** for selling watches,
+                featuring user authentication, product management, shopping carts,
+                orders, payments, offers, and a complete admin dashboard.
+
+                The application includes both **customer and admin workflows**, with
+                secure authentication and transactional order processing.
+            `,
                 techStack: {
-                    frontend: ['React', 'TypeScript'],
-                    backend: ['Node.js', 'Express'],
-                    others: ['MongoDB', 'Docker'],
+                    frontend: ['EJS', 'JavaScript'],
+                    backend: ['Node.js', 'Express.js', 'Passport.js', 'Nodemailer'],
+                    others: [
+                        'MongoDB',
+                        'Mongoose',
+                        'Razorpay',
+                        'Cloudinary',
+                        'JWT',
+                    ],
                 },
                 architecture: `
-                    Describe the high-level system design here. Explain how the pieces connect
-                    and any interesting **architectural decisions** you made.
-                `,
+                Implemented complete user workflows for browsing products, managing
+                carts and wishlists, placing orders, making payments, and handling returns.
+
+                Authentication includes **JWT authentication, OTP verification,
+                Google OAuth, and secure route protection**.
+
+                Integrated **Razorpay** with payment verification and retry handling.
+
+                Implemented product search, filtering, wishlists, coupons, offers,
+                and referral-based discounts.
+
+                The admin dashboard supports product, category, user, order, coupon,
+                and offer management.
+
+                Used **MongoDB transactions** to prevent stock inconsistencies during
+                concurrent order operations.
+            `,
             },
         ],
 
         // Learning / exploration projects
         mini: [
             {
-                title: 'SSE Demo',
-                tagline: 'Exploring Server-Sent Events with Node.js.',
-                image: mock3,
+                title: 'TaskVault',
+                tagline: 'Task management API with authentication and asynchronous data synchronization.',
+                image: taskvault,
                 links: [
-                    { label: 'Source Code', url: 'https://github.com/Abhinks151' },
+                    { label: 'GitHub', url: 'https://github.com/Abhinks151/TaskVault' },
                 ],
                 description: `
-                    A minimal project built to learn **Server-Sent Events** and how they compare
-                    to \`WebSockets\` for one-way real-time data streaming.
-                `,
-                techStack: {
-                    frontend: ['HTML', 'Vanilla JS'],
-                    backend: ['Node.js', 'Express'],
-                    others: [],
-                },
-                architecture: `
-                    Single **Express** server that opens an SSE stream per client. The client
-                    subscribes with \`EventSource\` and receives live updates without polling.
-                `,
-            },
-            {
-                title: 'Redis Cache',
-                tagline: 'Hands-on Redis caching patterns with Node.js.',
-                image: mock4,
-                links: [
-                    { label: 'Source Code', url: 'https://github.com/Abhinks151' },
-                ],
-                description: `
-                    Built to understand **Redis** caching strategies — cache-aside, write-through,
-                    and TTL-based invalidation — in a real \`Node.js\` context.
-                `,
+                TaskVault is a **task management API** built to practice backend
+                architecture, authentication, authorization, and asynchronous processing.
+
+                It supports CRUD task operations with **JWT authentication**,
+                role-based authorization, and dual-database synchronization.
+            `,
                 techStack: {
                     frontend: [],
-                    backend: ['Node.js', 'Express'],
-                    others: ['Redis', 'Docker'],
+                    backend: ['Node.js', 'Express', 'TypeScript', 'JWT'],
+                    others: ['MongoDB', 'PostgreSQL', 'BullMQ'],
                 },
                 architecture: `
-                    REST API backed by **MongoDB** with a **Redis** cache-aside layer.
-                    Cache hits return in <1 ms; misses populate the cache for subsequent reads.
-                `,
+                The API follows **Clean Architecture**, separating controllers,
+                use cases, repositories, and infrastructure concerns.
+
+                Implemented asynchronous synchronization between **MongoDB and PostgreSQL**
+                using **BullMQ**, allowing database synchronization work to be processed
+                through background jobs instead of blocking API requests.
+            `,
             },
+
             {
-                title: 'Socket Chat',
-                tagline: 'Real-time chat room with Socket.io.',
-                image: mock5,
+                title: 'DevScribe',
+                tagline: 'Blog application built with React and Firebase.',
+                image: devscribe,
                 links: [
-                    { label: 'Source Code', url: 'https://github.com/Abhinks151' },
+                    { label: 'GitHub', url: 'https://github.com/Abhinks151/DevScribe' },
                 ],
                 description: `
-                    A small chat application built to learn **Socket.io** room management,
-                    broadcast events, and handling disconnects gracefully.
-                `,
+                DevScribe is a **blog application** built to gain hands-on experience
+                with authentication and cloud-based application development.
+
+                Users can authenticate and perform CRUD operations on blog content.
+            `,
                 techStack: {
                     frontend: ['React'],
-                    backend: ['Node.js', 'Socket.io'],
-                    others: [],
+                    backend: [],
+                    others: ['Firebase Authentication', 'Cloud Firestore'],
                 },
                 architecture: `
-                    Event-driven server using **Socket.io** namespaces and rooms. Each chat room
-                    is a Socket.io room; join/leave events are broadcast to all room members.
-                `,
+                The application uses **Firebase Authentication** for user identity
+                and **Cloud Firestore** as the database for storing blog content.
+
+                Authentication state is used to protect application features and
+                restrict blog management operations to authenticated users.
+            `,
+            },
+
+            {
+                title: 'PCForge',
+                tagline: 'E-commerce platform built to learn Redux state management.',
+                image: pcforge,
+                links: [
+                    { label: 'GitHub', url: 'https://github.com/Abhinks151/PCForge' },
+                ],
+                description: `
+                PCForge is a simulated **e-commerce platform** built to gain practical
+                experience with global state management using **Redux Toolkit**.
+
+                The application includes product browsing, cart management, and
+                Cloudinary-based image handling.
+            `,
+                techStack: {
+                    frontend: ['React', 'Redux Toolkit'],
+                    backend: ['Node.js', 'Express'],
+                    others: ['MongoDB', 'Cloudinary'],
+                },
+                architecture: `
+                The frontend uses **Redux Toolkit** to manage global application state,
+                particularly product and cart-related state.
+
+                The backend provides REST APIs using **Node.js and Express**, with
+                MongoDB used for persistence and Cloudinary used for image management.
+            `,
             },
         ],
     },
